@@ -1,5 +1,9 @@
-const welcome = function() {
-    console.log( "Welcome to my application. I am Sabiha and a part of FunctionUp Plutonium cohort.")
+const name="Poushali Aich"
+
+let welcome=function(){
+    console.log(">> ====welcome to my application.====\n>> I am " + name + "and a part of FunctionUp Plutonium Cohort");
+
 }
 
-module.exports.printInfo = welcome
+module.exports.myName=name;
+module.exports.greetings=welcome;

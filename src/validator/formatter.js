@@ -1,21 +1,11 @@
-const trim = function(){
-    let name = "   Sabiha Khan     "
-    name = name.trim()
-    console.log(name)
-}
+const name=require('../logger/logger')
+const s1='                  >>FunctionUp         ';
+const s2='>> PLUTONIUM     ->'
+const s3= ".. ''+name.myName+'...Cohort.....";
+const stringTrim=()=>{console.log(s1.trim())};
+const stringToLowerCase=()=>{console.log(s2.toLowerCase())};
+const stringToUpperCase=()=>{console.log(s3.toUpperCase())};
 
-const changeToUpperCase = function() {
-    let upperCaseString = "SaBIHa KHAn"
-    upperCaseString = upperCaseString.toUpperCase()
-    console.log(upperCaseString)
-}
-
-const changetoLowerCase = function() {
-    let lowerCaseString = "SaBIHa KHAn"
-    lowerCaseString = lowerCaseString.toLowerCase()
-    console.log(lowerCaseString)
-}
-
-module.exports.trimMyString = trim
-module.exports.getUpperCaseString = changeToUpperCase
-module.exports.changetoLowerCase = changetoLowerCase
+module.exports.trim=stringTrim;
+module.exports.toLowerCase=stringToLowerCase;
+module.exports.toUpperCase=stringToUpperCase;

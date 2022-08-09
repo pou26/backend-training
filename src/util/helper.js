@@ -1,21 +1,17 @@
-const printDate = function() {
-    let currentDate = new Date()
-    currentDate = currentDate.getDate()
-    console.log('The current date is: '+currentDate)
+const batch=require('../introduction/intro')
+let day=new Date();
+let date=day.getFullYear()+'-'+(day.getMonth()+1)+'-'+day.getDate();
+let printDate=function(){
+    console.log(date)
 }
-
-const printMonth = function() {
-    let currentDate = new Date()
-    let currentMonth = currentDate.getMonth()
-    currentMonth = currentMonth + 1
-
-    console.log('The current months is: ' + currentMonth)
+let printMonth=function(){
+    const month=(day.getMonth()+1);
+    const arr=['jan','feb','march','april','may','june','july','august','september','october','november','december']
+    console.log('>>current month is : ',arr[month-1])
 }
-
-const getBatchInfo = function() {
-    console.log('Plutonium, W4D1, the topic for today is Nodejs')
+let getBatchInfo=function(){
+    console.log(batch.name+'W3D3,Node.js')
 }
-
-module.exports.getTodaysDate = printDate
-module.exports.getCurrentMonth = printMonth
-module.exports.printBatchDetails = getBatchInfo
+module.exports.printDate=printDate;
+module.exports.printMonth=printMonth;
+module.exports.getBatchInfo=getBatchInfo;
