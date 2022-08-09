@@ -1,10 +1,10 @@
-const batchName = "Plutonium"
+const movies = "thriller"
 
-let printName = function() {
-    console.log('Bathc name is ', batchName)
+let movieName = function() {
+    console.log('movie list ', movies)
 }
 
-module.exports.name = batchName
-module.exports.printName = printName
+module.exports.name = movies
+module.exports.printName = movieName
 
 
