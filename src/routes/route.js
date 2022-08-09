@@ -1,22 +1,43 @@
-//array_missing_number
+// //array_missing_number
+// const express = require('express');
+// const router = express.Router();
+// const abc=require('../logger/logger')
+// const bcd=require('../util/helper')
+// const def=require('../validator/formatter')
+// router.get('/s1', function(req, res){
+//     const arr = [1,2,3,5,6,7]
+//     let n=arr[arr.length-1]
+//     let sum= n*(n+1)/2;
+//     let sum1= arr.reduce((a,b)=>a+b);
+
+//     let missingNumber=sum-sum1
+
+//     console.log("missing number: "+ missingNumber)
+//     res.send("missing number is : "+ missingNumber )
+// })
+// module.exports = router;
+
+
+
 const express = require('express');
 const router = express.Router();
 const abc=require('../logger/logger')
 const bcd=require('../util/helper')
 const def=require('../validator/formatter')
-router.get('/s1', function(req, res){
-    const arr = [1,2,3,5,6,7]
-    let n=arr[arr.length-1]
-    let sum= n*(n+1)/2;
-    let sum1= arr.reduce((a,b)=>a+b);
+router.get("/s2", function (req, res) {
+    let arr= [33, 34, 35, 37, 38]
+        
+    let sum=0
+    let n=arr.length
+    for(let i=0; i<arr.length; i++){
+        sum=sum+arr[i]
+    }
+    let  missingNumber=((n+1)*(arr[0]+arr[n-1])/2)-sum
 
-    let missingNumber=sum-sum1
-
-    console.log("missing number: "+ missingNumber)
-    res.send("missing number is : "+ missingNumber )
-})
+    console.log({data: missingNumber})
+    res.send(  { data: missingNumber  }  );
+});
 module.exports = router;
-
 
 
 
