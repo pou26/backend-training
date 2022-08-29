@@ -13,23 +13,29 @@ const createUser = async function (req, res) {
 
 //loginuser
 const loginUser = async function (req, res) {
-  let userName = req.body.emailId;
-  let password = req.body.password;
+  let { emailId } = req.body
+  let { password } = req.body
+  let userCheck = await userModel.findOne({ emailId: emailId, password: password })
+  if (!userCheck) { return res.send("Incorrect userID or password.") }
 
-  let user = await userModel.findOne({ emailId: userName, password: password });
-  if (!user)
-    return res.send({
-      status: false,
-      msg: "username or the password is not corerct",
-    });
-  };
+  let token = jwt.sign(
+      {
+          userID: userCheck._id.toString(),
+          platform: "education"
+      },
+      "I am learning the creation of jwt"
+  )
+  res.send({ status: true, token: token })
+}
 
   //get user details
   const getUserData = async function (req, res) {
+    let userId = req.params.userId
+    let getDetails = await userModel.findById(userId)
     res.send(getDetails)
 }
 
-module.exports.getUserData = getUserData
+
 
   //user details update
   const updateUser = async function (req, res) {
